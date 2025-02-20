@@ -1,5 +1,7 @@
 # Node modules
 node_modules/
+.prettierignore
+.prettierrc
 
 # Logs
 logs/
