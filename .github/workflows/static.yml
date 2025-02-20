@@ -1,29 +1,28 @@
-name: Deploy to GitHub Pages
+name: Static Analysis
 
 on:
   push:
     branches:
-      - main # Cambia si usas otra rama para el despliegue
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  deploy:
+  static-analysis:
     runs-on: ubuntu-latest
+
     steps:
-      - name: 📥 Checkout del código
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: ⚙️ Configurar Pages
-        uses: actions/configure-pages@v3
-
-      - name: 🚀 Subir archivos estáticos
-        uses: actions/upload-pages-artifact@v4 # 🔥 Actualizado a v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          path: . # Asegúrate de que `index.html` está en la raíz
+          node-version: "14"
 
-      - name: 🌍 Publicar en GitHub Pages
-        uses: actions/deploy-pages@v2
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run static analysis
+        run: npm run lint
