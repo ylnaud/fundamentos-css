@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Asegúrate de que esta es tu rama principal
+      - main # Cambia si usas otra rama para el despliegue
 
 permissions:
   contents: read
@@ -21,9 +21,9 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: 🚀 Subir archivos estáticos
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4 # 🔥 Actualizado a v4
         with:
-          path: . # Asegúrate de que tu index.html está en la raíz del repo
+          path: . # Asegúrate de que `index.html` está en la raíz
 
       - name: 🌍 Publicar en GitHub Pages
         uses: actions/deploy-pages@v2
