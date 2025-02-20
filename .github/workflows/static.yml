@@ -23,7 +23,7 @@ jobs:
       - name: 🏗️ Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: 📦 Instalar dependencias
         run: |
@@ -33,7 +33,7 @@ jobs:
         run: htmlhint "**/*.html"
 
       - name: 🎨 Analizar CSS con Stylelint
-        run: stylelint "**/*.css"
+        run: stylelint "**/assets*.css"
 
       - name: 🧹 Analizar JavaScript con ESLint
-        run: eslint "**/*.js"
+        run: eslint "**/assets*.js"

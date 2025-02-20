@@ -1,19 +1,10 @@
-# Node modules
-node_modules/
-.prettierignore
-.prettierrc
 
 # Logs
 logs/
 *.log
 npm-debug.log*
 
-# Dependency directories
-jspm_packages/
 
-# Build directories
-dist/
-build/
 
 # Temporary files
 *.tmp
@@ -25,10 +16,6 @@ Thumbs.db
 
 # IDE specific files
 .vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
 # HTML, CSS, and JavaScript specific files
 *.html
 *.css
