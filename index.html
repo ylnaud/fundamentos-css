@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso de CSS</title>
+  <link rel="stylesheet" href="assets/normalize.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/index.js" type="module" defer></script>
+</head>
+
+<body>
+  <article id="temario-css">
+    <h1 style="color: lightskyblue">Aprendiendo CSS</h1>
+    <p>
+      <i style="font-weight: bold; color: orangered">Cascading Style Sheets</i>
+      - Hojas de Estilo en Cascada
+    </p>
+    <h2>Temario del Curso</h2>
+    <ul>
+      <li><a href="index.html#selectores-basicos">Selectores Básicos</a></li>
+      <li><a href="index.html#selectores-avanzados">Selectores Avanzados</a></li>
+      <li><a href="index.html#pseudoclases">Pseudoclases</a></li>
+      <li><a href="index.html#pseudoelementos">Pseudoelementos</a></li>
+      <li><a href="index.html#agrupar-selectores">Agrupar Selectores</a></li>
+      <li><a href="index.html#algoritmo-css">El Algoritmo de CSS</a></li>
+      <li><a href="index.html#javascript">JavaScript</a></li>
+      <li><a href="index.html#reseteo-normalizacion">Reseteo y Normalización de Estilos</a></li>
+      <li><a href="index.html#prefijos-navegadores">Prefijos de los Navegadores</a></li>
+      <li><a href="box-model.html">Modelo de Caja</a></li>
+      <li><a href="positions.html">Posicionamiento en CSS</a></li>
+      <li><a href="positions-examples.html">Ejercicios de Posicionamiento CSS</a></li>
+      <li><a href="colors.html">Colores en CSS</a></li>
+      <li><a href="units.html">Unidades de Medida en CSS</a></li>
+      <li><a href="variables-functions.html">Variables y Funciones en CSS</a></li>
+      <li><a href="fonts-texts.html">Estilos de Fuentes y Textos</a></li>
+      <li><a href="border-outline.html">Bordes y Outlines</a></li>
+      <li><a href="backgrounds.html">Fondos en CSS</a></li>
+      <li><a href="images.html">Imágenes en CSS</a></li>
+      <li><a href="lists.html">Listas en CSS</a></li>
+      <li><a href="tables.html">Tablas en CSS</a></li>
+      <li><a href="forms.html">Formularios en CSS</a></li>
+      <li><a href="visual-effects.html">Efectos Visuales en CSS</a></li>
+      <li><a href="scroll-one-page.html">Efectos con Scroll (<small>Sitio One Page</small>)</a></li>
+      <li><a href="scroll-snap-slides.html">Ajuste del Scroll (<small>Slides</small>)</a></li>
+      <li><a href="motion.html">Movimiento en CSS</a></li>
+    </ul>
+  </article>
+  <hr />
+  <!-- Resto del contenido HTML -->
+  <!-- ... (Contenido previo del temario) ... -->
+  <article id="selectores-basicos">
+    <h2>Selectores Básicos</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut laboriosam unde soluta repellat neque nobis ipsa
+      optio
+      deleniti quis magnam praesentium omnis, distinctio animi, vero nostrum ipsum veritatis officia sed.
+    </p>
+    <p id="parrafo-dos">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum est fugit deleniti veritatis pariatur repudiandae
+      suscipit
+      tempore, voluptas maiores adipisci dolorem doloribus quasi delectus molestiae esse minima excepturi nulla
+      consequatur!
+    </p>
+    <p class="text-32 bg-skyblue">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea qui, minima hic inventore non doloribus assumenda
+      sapiente,
+      iure unde nulla illo velit delectus, asperiores accusantium et! Ullam error atque modi?
+    </p>
+    <div class="text-group">
+      <p class="text-20 bg-steelblue text-white">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero sed veniam aliquam eligendi. Recusandae quibusdam
+        quasi
+        veniam numquam, sed praesentium esse, eos nobis, hic ratione illo aut quia. Ab, magni.
+      </p>
+      <p class="text-32 bg-steelblue text-white">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae odit est unde dolor neque natus, libero, quo
+        suscipit
+        officia aliquid, minus quis ad deserunt tempora vel quae? Quibusdam, tempore deleniti?
+      </p>
+    </div>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <hr />
+  <article id="selectores-avanzados">
+    <h2>Selectores Avanzados</h2>
+    <section class="selectores-hijos">
+      <h3>Selectores de hijos</h3>
+      <div class="hijos-directos">
+        <h4>Directos</h4>
+        <ul>
+          <li>
+            <b>Primavera</b>
+          </li>
+          <li>
+            <b>Verano</b>
+          </li>
+          <li>
+            <b>Otoño</b>
+          </li>
+          <li>
+            <b>Invierno</b>
+          </li>
+        </ul>
+      </div>
+      <div class="hijos-descendientes">
+        <h4>Descendientes</h4>
+        <ul>
+          <li>
+            <b>Primavera</b>
+          </li>
+          <li>
+            <b>Verano</b>
+          </li>
+          <li>
+            <b>Otoño</b>
+          </li>
+          <li>
+            <b>Invierno</b>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="selectores-hermanos">
+      <h3>Selectores de hermanos</h3>
+      <div class="hermanos-general">
+        <h4>General</h4>
+        <ul>
+          <li>
+            <b>Primavera</b>
+          </li>
+          <li class="hermano-general">
+            <b>Verano</b>
+          </li>
+          <li>
+            <b>Otoño</b>
+          </li>
+          <li>
+            <b>Invierno</b>
+          </li>
+        </ul>
+      </div>
+      <div class="hermanos-adyacentes">
+        <h4>Adyacente</h4>
+        <ul>
+          <li>
+            <b>Primavera</b>
+          </li>
+          <li class="hermano-adyacente">
+            <b>Verano</b>
+          </li>
+          <li>
+            <b>Otoño</b>
+          </li>
+          <li>
+            <b>Invierno</b>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="selectores-atributos">
+      <h3>Selectores de Atributos</h3>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="https://jonmircha.com" target="_blank" rel="noopener">Inicio</a></li>
+          <li><a class="menu-item cursos button" href="https://jonmircha.com/cursos" target="_blank"
+              rel="noopener noreferrer">Cursos</a></li>
+          <li><a href="http://jonmircha.com/blog" target="_blank" rel="noopener">Blog</a></li>
+          <li><a href="https://jonmircha.com/cv" target="_blank" rel="noopener">CV</a></li>
+          <li><a class="menu-item ahora button" href="https://jonmircha.com/ahora" target="_blank"
+              rel="noopener noreferrer">Ahora</a></li>
+        </ul>
+      </nav>
+    </section>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <hr />
+  <!-- Sección de Pseudoclases mejorada -->
+  <article id="pseudoclases">
+    <h2>Pseudoclases</h2>
+    <form class="form-pseudoclases" aria-labelledby="form-title">
+      <h3 id="form-title">Formulario de Ejemplo</h3>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required />
+      <span class="error">Error: (Nombre requerido)</span>
+
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" placeholder="Escribe tu correo" />
+      <span class="error">Error: (Email requerido)</span>
+
+      <button id="btn" type="submit" class="btn">Enviar</button>
+    </form>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <!-- Resto de secciones manteniendo la misma estructura mejorada -->
+  <hr />
+  <article id="pseudoelementos">
+    <h2>Pseudoelementos</h2>
+    <ol>
+      <li>::backdrop</li>
+      <li>::before</li>
+      <li>::after</li>
+    </ol>
+    <section class="modal-section" aria-label="Ejemplo de ventana modal">
+      <h3>Ventana Modal Con ::backdrop</h3>
+      <button id="showDialogBtn" aria-haspopup="dialog">Mostrar modal</button>
+      <dialog id="favDialog" aria-labelledby="dialogTitle">
+        <h4 id="dialogTitle">Diálogo de Ejemplo</h4>
+        <form method="dialog">
+          <p>Este es un ejemplo de diálogo modal con fondo oscuro.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus magni atque voluptatem quo
+            unde.
+          </p>
+          <div class="dialog-actions">
+            <button id="confirmBtn" class="btn">Cerrar</button>
+          </div>
+        </form>
+      </dialog>
+    </section>
+    <section>
+      <h3>::Before</h3>
+      <h4>Saga de Geminis</h4>
+      <p>
+        <i>Bandai Myth Cloth Ex</i>
+        <span class="saga-gemenis">Saga Geminis</span>
+        <span class="saga-precio">500</span>
+      </p>
+      <p class="p-pseudoelementos">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nostrum hic nam. <br />Repudiandae expedita rerum
+        dolore
+        accusamus sed consequatur et, id molestiae provident autem beatae deserunt ea aut similique cupiditate.
+      </p>
+      <input class="input-pseudoelementos" type="text" name="name" placeholder="Escribe tu Nombre" />
+      <a href="#temario-css" class="back-to-top">
+        Volver al temario</a>
+  </article>
+  <hr>
+  <article id="prefijos-navegadores">
+    <h2>Prefijos de Navegadores</h2>
+    <ul class="browser-prefixes">
+      <li>
+        <kbd>-webkit-</kbd>
+        (Chrome, Safari, Edge)
+      </li>
+      <li>
+        <kbd>-moz-</kbd>
+        (Firefox)
+      </li>
+      <li>
+        <kbd>-ms-</kbd>
+        (Internet Explorer)
+      </li>
+      <li>
+        <kbd>-o-</kbd>
+        (Opera antiguo)
+      </li>
+    </ul>
+    <div class="spacer" aria-hidden="true"></div>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <hr>
+  <article id="agrupar-selectores">
+    <h2>Agrupar Selectores</h2>
+    <form class="form-agrupar-selectores">
+      <label for="name">Nombre</label>
+      <input class="input-value" type="text" placeholder="Escribe tu Nombre" name="name" required>
+      <span class="name-requerido">Nombre: requerido</span>
+      <label for="email">Correo</label>
+      <input class="input-value" type="email" name="email" placeholder="Escribe tu Correo">
+      <span class="email-requerido">Correo: (requerido)</span>
+      <label for="text-area">Comentarios</label>
+      <textarea name="text-area" id="area" placeholder="Comments"></textarea>
+      <span class="text-area-requerido">Comentarios: requerido</span>
+      <button id="submit" type="submit">Enviar</button>
+    </form>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <hr />
+  <!--Aalgoritmo- de css -->
+  <article id="algoritmo-css">
+    <h2>Algoritmo de CSS</h2>
+    <ul>
+      <li>La Cascada</li>
+      <li>La Expecifidad</li>
+      <li>La Herencia</li>
+    </ul>
+    <blockquote id="cita-marco" class="cita-marco">
+      Se tolereante con los demas escrito contigo mismo - <cite>Marco Aurelio</cite>
+    </blockquote>
+
+    <blockquote id="cita-duanly" class="cita-duanly">
+      Yo solo se, que no se nada. - <cite>Duanly Vega Alderete</cite>
+    </blockquote>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+
+  </article>
+  <hr />
+  <article id="javascript">
+    <section class="border">
+
+      <h2>JavaScript</h2>
+      <ul id="user-list" class="user-list"></ul>
+    </section>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+
+  </article id="reseteo-normalizacion">
+  <article>
+    <h2>Reseteo y Normalización de Estilos</h2>
+    <ul>
+      <li>Resetear Estilos</li>
+      <li>Normalizar Estilos</li>
+    </ul>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <article id="prefijos-navegadores">
+    <h2>Prefijos de los Navegadores</h2>
+    <ul>
+      <li>-webkit-</li>
+      <li>-moz-</li>
+      <li>-ms-</li>
+      <li>-o-</li>
+    </ul>
+    <a href="#temario-css" class="back-to-top">
+      Volver al temario</a>
+  </article>
+  <!-- Footer opcional -->
+  <footer role="contentinfo">
+    <p>&copy; 2024 Curso de CSS. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</body>
+
+</html>

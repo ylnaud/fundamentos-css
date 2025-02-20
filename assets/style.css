@@ -1,0 +1,510 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
+Comentario en CSS
+
+Regla CSS consta de 2 partes 
+ 1) el selector
+ 2) bloque de declaraciones: {
+  atributo: valor;
+  atributo-de-mas-dos-palabras: otro-valor;
+}
+*/
+
+/* Son mala práctica por que son bloqueantes a la hora de que el navegador lee esta instrucción */
+/*@import url('otro-hoja.css');*/
+
+h1 {
+  color: orangered;
+  background-color: black;
+}
+
+article {
+  width: 80%;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+  Links de referencia y documentación
+  https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada
+  https://www.w3.org/html/logo/
+  https://www.w3.org/standards/webdesign/htmlcss.html
+  https://www.w3.org/TR/css-2020/
+  https://developer.mozilla.org/es/docs/Web/CSS
+  https://cssreference.io/
+  https://caniuse.com/
+  https://codeguide.co/
+*/
+
+/* 
+Selectores Básicos
+  1) Etiquetas - son elementos html
+  2) Identificadores - atributo id - #
+  3) Clases - atributo class - .
+*/
+
+p {
+  color: midnightblue;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Dar estilos con Id se considera un AntiPatrón */
+#parrafo-dos {
+  background-color: skyblue;
+}
+
+/* Dar estilos con clases nos permite reutilizar nuestro código CSS */
+.bg-skyblue {
+  background-color: skyblue;
+}
+
+.bg-steelblue {
+  background-color: steelblue;
+}
+
+.text-20 {
+  font-size: 20px;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+.text-white {
+  color: white;
+}
+
+.hijos-directos>li {
+  background-color: thistle;
+}
+
+.hijos-descendientes b {
+  background-color: thistle;
+}
+
+/* Los selectores de hermanos van a aplicar a los elementos que son hermanos y que estén por debajo del elemento de referencia */
+.hermanos-general~li {
+  background-color: thistle;
+}
+
+.hermanos-adyacentes+li {
+  background-color: thistle;
+}
+
+/* Selectores de atributos:
+
+a[href]: Aplica estilos a los enlaces que tienen un atributo href.
+
+a[target='_blank']: Aplica estilos a los enlaces que abren en una nueva pestaña.
+
+a[href*='jonmircha']: Aplica estilos a los enlaces cuyo href contiene "jonmircha".
+
+a[href^="http://"]: Aplica estilos a los enlaces cuyo href comienza con "http://".
+
+a[href$='.com']: Aplica estilos a los enlaces cuyo href termina con ".com".
+
+a[class~='cursos']: Aplica estilos a los enlaces cuya clase contiene "cursos".
+
+a[class|='menu']: Aplica estilos a los enlaces cuya clase comienza con "menu" seguido de un guion (-). */
+.selectores-atributos a[href] {
+  color: orangered;
+}
+
+.selectores-atributos a[target='_blank'] {
+  font-weight: bold;
+}
+
+/* El comodín del * aplica el estilo si contiene el texto en cuestión en cualquier parte */
+.selectores-atributos a[href*='jonmircha'] {
+  font-size: 24px;
+}
+
+/* El comodín del ^ aplica el estilo si contiene el texto en cuestión al inicio */
+.selectores-atributos a[href^="http://"] {
+  text-decoration: none;
+}
+
+.border {
+
+  width: 70%;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px springgreen solid;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 10px;
+  /* Espacio entre elementos */
+  padding: 0;
+  margin: 0;
+  list-style: none;/
+}
+
+.user-list li {
+  background-color: inherit;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: wrap;
+  flex: 1 1 200px;
+
+}
+
+/* El comodín del $ aplica el estilo si contiene el texto en cuestión al final */
+.selectores-atributos a[href$='.com'] {
+  background-color: black;
+}
+
+/* El comodín del ~ aplica el estilo si contiene el texto en cuestión en una lista separada por espacios */
+.selectores-atributos a[class~='cursos'] {
+  background-color: midnightblue;
+}
+
+/* El comodín del | aplica el estilo si contiene el texto en cuestión en una lista separada por espacios y que después del texto en cuestión venga un guión medio - */
+.selectores-atributos a[class|='menu'] {
+  font-style: italic;
+}
+
+/* Selector universal (*): Aplica estilos a todos los elementos.
+font-family: sans-serif;: Fuente sans-serif para todo el documento.
+.selector-universal *: Aplica un tamaño de fuente de 24px a todos los elementos dentro de un contenedor con la clase .selector-universal.*/
+* {
+  font-family: sans-serif;
+}
+
+.selector-universal * {
+  font-size: 24px;
+}
+
+/* 
+Pseudoclases: Aplican estilos dependiendo del estado o posición del elemento.
+
+:required, :valid, :invalid, :focus, :disabled: Estilos para campos de formulario.
+
+:visited, :hover: Estilos para enlaces visitados y al pasar el mouse.
+
+:target: Estilos cuando el elemento es el objetivo de un enlace.
+
+:first-child, :last-child, :nth-child, :first-of-type, :last-of-type, :nth-of-type: Estilos basados en la posición del elemento.
+
+:not(p): Aplica estilos a todos los elementos excepto los <p>.
+
+
+*/
+
+.form-pseudoclases *:required {
+  border-color: yellow;
+}
+
+.form-pseudoclases *:valid {
+  border-color: green;
+}
+
+.form-pseudoclases *:invalid {
+  border-color: red;
+}
+
+.form-pseudoclases *:focus {
+  background-color: skyblue;
+}
+
+.form-pseudoclases *:disabled {
+  background-color: pink;
+}
+
+.menu-pseudoclases a:visited {
+  color: olive;
+}
+
+.menu-pseudoclases a:hover {
+  color: orange;
+}
+
+.p-pseudoclases:hover {
+  font-size: 20px;
+}
+
+#temario-css:target {
+  background-color: lightgreen;
+}
+
+.lista-pseudoclases li:first-child {
+  color: aqua;
+}
+
+.lista-pseudoclases li:last-child {
+  color: violet;
+}
+
+.lista-pseudoclases li:nth-child(4) {
+  color: red;
+}
+
+.lista-pseudoclases li:nth-child(2n) {
+  font-size: 20px;
+  color: grey;
+}
+
+.lista-pseudoclases li:nth-child(2n + 1) {
+  font-weight: bold;
+}
+
+/* even === par*/
+.lista-pseudoclases li:nth-child(even) {
+  background-color: blue;
+}
+
+/* odd === impar*/
+.lista-pseudoclases li:nth-child(odd) {
+  font-size: 20px;
+  background-color: blueviolet;
+}
+
+/* Primer (x === a cualquier elemento html dentro del body)  first-of-type*/
+.articulo-pseudoclases p:first-of-type {
+  background-color: rgb(43, 93, 143);
+}
+
+/* Ultimo (x === a cualquier elemento html dentro del body) last-of-type */
+.articulo-pseudoclases p:last-of-type {
+  background-color: bisque;
+}
+
+.articulo-pseudoclases p:nth-of-type(1) {
+  background-color: fuchsia;
+}
+
+/*
+apicales a todo menos a los párrafos :not()*/
+.articulo-pseudoclases *:not(p) {
+  background-color: green;
+}
+
+.text {
+  width: min(99999px, 50%);
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: aquamarine;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 5px 15px;
+}
+
+dialog::backdrop {
+  background-color: salmon;
+}
+
+.saga-gemenis::before {
+  content: 'hola';
+  color: red;
+  font-weight: bold;
+  margin-right: 5px;
+  /* Espacio entre "hola" y "Saga Geminis" */
+}
+
+.saga-precio::after {
+  content: '$';
+  color: red;
+}
+
+/*Hace referencia a la primera letra*/
+.p-pseudoelementos::first-letter {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/*Primera linea*/
+.p-pseudoelementos::first-line {
+  color: maroon;
+}
+
+.p-pseudoelementos::selection {
+  color: yellowgreen;
+}
+
+.input-pseudoelementos {
+  display: block;
+}
+
+.input-pseudoelementos::placeholder {
+  color: green;
+  display: block;
+}
+
+.form-agrupar-selectores input[type='text'],
+.form-agrupar-selectores input[type='email'],
+.form-agrupar-selectores textarea,
+.form-agrupar-selectores button {
+  border-color: chocolate;
+  border-width: 5px;
+  border-style: dashed;
+  background-color: #e6eaeb;
+  font-size: 20px;
+  display: block;
+  width: 400px;
+}
+
+
+.form-pseudoclases span {
+  display: none;
+  margin: 1rem;
+  background-color: red;
+}
+
+.name-requerido,
+.email-requerido,
+.text-area-requerido {
+  color: red;
+  display: none;
+}
+
+
+
+.back-to-top {
+  text-decoration: none;
+
+}
+
+
+.back-to-top::before {
+
+  content: '☝️';
+  color: rgb(203, 13, 57);
+  /* Cambia el color del emoji */
+  margin-right: 5px;
+  /* Espacio entre el emoji y el texto */
+  font-size: 44px;
+  /* Tamaño del emoji */
+}
+
+
+.btn {
+  margin-top: 1rem;
+  background-color: rgb(179, 113, 14);
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/*  
+📌 **El Algoritmo de CSS**: Es el conjunto de reglas que determinan cómo el navegador aplica los estilos a un documento HTML. Comprender este proceso es clave para manejar la prioridad y la posible sobrescritura de estilos.
+
+🔹 **Componentes principales**:
+  1️⃣ **La Cascada** 🏞️: Define el orden en que se aplican los estilos, considerando:
+     - **Origen del código**:
+       - Estilos por defecto del navegador (*User Agent*).
+       - Personalizaciones del usuario.
+       - Estilos definidos por el autor.
+     - **Especificidad del selector**.
+     - **Orden de aparición** en el código.
+
+  2️⃣ **La Especificidad** ⚖️: Determina qué regla prevalece cuando hay conflictos de estilos. Se calcula así:
+     - **Etiquetas y Pseudoelementos** → `0,0,0,1`
+     - **Clases, atributos y pseudoclases** → `0,0,1,0`
+     - **Identificadores** → `0,1,0,0`
+     - **Estilos en línea** → `1,0,0,0`
+     - `!important` 🔥 → Sobrescribe la especificidad.
+
+  3️⃣ **La Herencia** 🌱: Permite que ciertos estilos se transmitan de un elemento padre a sus hijos.  
+     - Se usa `inherit` para forzar la herencia.  
+     - Se usa `initial` para restablecer un valor al predeterminado del navegador.
+
+📖 Más información sobre herencia en CSS:  
+🔗 https://web.dev/learn/css/inheritance/#which-properties-are-inheritable  
+*/
+/*  
+📌 **El Algoritmo de CSS en este código**  
+
+🔹 **Paso 1: Identificar la especificidad de cada selector**  
+Cada regla CSS tiene una puntuación de especificidad que determina cuál se aplicará si hay conflicto.  
+
+Especificidad de los selectores en este código:  
+1️⃣ `blockquote#cita-marco.cita-marco` → `0,1,1,1`  
+2️⃣ `blockquote.cita-marco` → `0,0,1,1`  
+3️⃣ `blockquote` → `0,0,0,1`  
+4️⃣ `#cita-marco` → `0,1,0,0`  
+5️⃣ `.cita-marco` → `0,0,1,0` (definida dos veces)  
+6️⃣ `.cita-marco { background-color: mediumaquamarine !important; }` → `!important` gana 🚀  
+7️⃣ `blockquote#cita-marco` → `0,1,0,1`  
+
+🔹 **Paso 2: Aplicando la Cascada y la Especificidad**  
+
+✅ Como hay una regla con `!important`, esta se aplica sin importar la especificidad:  
+`.cita-marco { background-color: mediumaquamarine !important; }`  
+
+Si eliminamos `!important`, el selector más específico sería:  
+`blockquote#cita-marco.cita-marco { background-color: lightsteelblue; }`  
+
+🔹 **Conclusión**  
+
+🎨 El color final de fondo será `mediumaquamarine` debido a `!important`.  
+Si `!important` se eliminara, el color sería `lightsteelblue` por tener la mayor especificidad.  
+
+📖 Más información sobre especificidad:  
+🔗 https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity  
+*/
+/* Esto es una mala practica blockquote#cita-marco.cita-marco */
+blockquote#cita-marco.cita-marco {
+  background-color: lightsteelblue;
+}
+
+blockquote {
+  background-color: burlywood;
+}
+
+#cita-marco {
+  background-color: lightgreen;
+}
+
+blockquote.cita-marco {
+  background-color: tomato;
+}
+
+.cita-marco {
+  background-color: cornflowerblue;
+}
+
+.cita-marco {
+  padding: 1rem;
+  font-size: 24px;
+  background-color: mediumaquamarine !important;
+  border-style: dashed;
+}
+
+blockquote#cita-marco {
+  background-color: lightsalmon;
+}
+
+.cita-marco cite {
+  color: rgb(179, 113, 14);
+  font-style: italic;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+.cita-duanly {
+  padding: 1rem;
+  border-style: dashed;
+  background-color: lightcoral !important;
+  font-size: 24px;
+}
+
+.cita-duanly cite {
+  color: rgb(150, 24, 24);
+  font-style: italic;
+  font-size: initial;
+}

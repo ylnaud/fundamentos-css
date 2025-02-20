@@ -1,9 +1,4 @@
 
-# Logs
-logs/
-*.log
-npm-debug.log*
-
 
 
 # Temporary files
@@ -17,6 +12,3 @@ Thumbs.db
 # IDE specific files
 .vscode/
 # HTML, CSS, and JavaScript specific files
-*.html
-*.css
-*.js
